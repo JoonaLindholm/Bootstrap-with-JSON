@@ -1765,18 +1765,17 @@ section,
   color: #e0e0e0 !important;
 }
 
-#sää #wx-current {
-  color: #ffffff;
+#sää #wx-current,
+#sää #wx-current div,
+#sää #wx-current span {
+  color: #ffffff !important;
 }
 
-#sää #wx-current * {
-  color: #ffffff;
+#sää #wx-current .text-muted,
+#sää #wx-current .small {
+  color: #e6e6e6 !important;
 }
-
-#sää #wx-current .text-muted {
-  color: #e0e0e0 !important;
-}
-
+  
 .footer-icon i {
   font-size: 26px;
   margin-bottom: 5px;
