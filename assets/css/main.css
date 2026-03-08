@@ -1764,7 +1764,19 @@ section,
 #sää .wx-hour .text-muted {
   color: #e0e0e0 !important;
 }
-  
+
+#sää #wx-current {
+  color: #ffffff;
+}
+
+#sää #wx-current * {
+  color: #ffffff;
+}
+
+#sää #wx-current .text-muted {
+  color: #e0e0e0 !important;
+}
+
 .footer-icon i {
   font-size: 26px;
   margin-bottom: 5px;
