@@ -1725,11 +1725,44 @@ section,
 }
 
 #sää {
-  color: white;
+  color: #ffffff;
 }
 
-#sää .text-muted {
-  color: #d6d6d6 !important;
+#sää h2,
+#sää h5,
+#sää p,
+#sää span,
+#sää div {
+  color: #ffffff;
+}
+
+#sää .text-muted,
+#sää .small {
+  color: #e0e0e0 !important;
+}
+
+#wx-current {
+  background: #5f6770 !important;
+  color: #ffffff;
+}
+
+#wx-current .fw-semibold,
+#wx-current #wx-temp,
+#wx-current #wx-desc,
+#wx-current #wx-wind,
+#wx-current #wx-time {
+  color: #ffffff !important;
+}
+
+#sää .wx-hour {
+  background: #1f1f1f !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#sää .wx-hour .small,
+#sää .wx-hour .text-muted {
+  color: #e0e0e0 !important;
 }
   
 .footer-icon i {
