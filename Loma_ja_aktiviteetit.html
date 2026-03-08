@@ -388,139 +388,217 @@
   <!-- Ladataan sivun oma pääskripti -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Tämä skripti hakee säädatan JSON-muodossa Open-Meteo-palvelusta -->
-  <script>
-    (function () {
-      const lat = -16.5004;
-      const lon = -151.7415;
-      const tz = 'Pacific/Tahiti';
+<!-- Tämä scripti hakee säätiedot Open-Meteo-palvelusta JSON-muodossa
+     ja näyttää ne Bora Boran sääosiossa. Lisäksi se lukee URL-osoitteesta
+     mahdollisen portfoliofilterin ja aktivoi oikean kuvaryhmän. -->
+<script>
 
-      const url = new URL('https://api.open-meteo.com/v1/forecast');
-      url.search = new URLSearchParams({
-        latitude: lat,
-        longitude: lon,
-        current: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
-        hourly: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
-        timezone: tz
-      }).toString();
+  // Tämä funktio suoritetaan heti, kun selain lukee scriptin.
+  // Sen tehtävä on hakea Bora Boran säätiedot ja näyttää ne sivulla.
+  (function () {
 
-      const $temp = document.getElementById('wx-temp');
-      const $desc = document.getElementById('wx-desc');
-      const $wind = document.getElementById('wx-wind');
-      const $time = document.getElementById('wx-time');
-      const $hours = document.getElementById('wx-hours');
-      const $err = document.getElementById('wx-error');
+    // Bora Boran likimääräiset koordinaatit.
+    // Näiden perusteella Open-Meteo tietää, minkä paikan sää haetaan.
+    const lat = -16.5004;
+    const lon = -151.7415;
 
-      const wxMap = {
-        0: 'Selkeää',
-        1: 'Enimmäkseen selkeää',
-        2: 'Puolipilvistä',
-        3: 'Pilvistä',
-        45: 'Sumua',
-        48: 'Kuuraa',
-        51: 'Tihkua (heikkoa)',
-        53: 'Tihkua',
-        55: 'Tihkua (voimakasta)',
-        61: 'Sadetta (heikkoa)',
-        63: 'Sadetta',
-        65: 'Sadetta (voimakasta)',
-        71: 'Lumisadetta',
-        80: 'Sadekuuroja',
-        95: 'Ukkosta'
-      };
+    // Aikavyöhyke tarvitaan, jotta kellonaika näkyy paikallisessa ajassa.
+    const tz = 'Pacific/Tahiti';
 
-      function iconFor(code) {
-        if (code === 0) return '☀️';
-        if ([1, 2].includes(code)) return '🌤️';
-        if (code === 3) return '☁️';
-        if ([61, 63, 65, 80].includes(code)) return '🌧️';
-        if ([45, 48].includes(code)) return '🌫️';
-        if (code === 95) return '⛈️';
-        return '🌡️';
-      }
+    // Luodaan Open-Meteo-palvelun osoite.
+    // URL-olion käyttö tekee osoitteen rakentamisesta selkeämpää kuin pitkä merkkijono.
+    const url = new URL('https://api.open-meteo.com/v1/forecast');
 
-      fetch(url)
-        .then(function (response) {
-          if (!response.ok) {
-            throw new Error('Network error');
-          }
-          return response.json();
-        })
-        .then(function (data) {
-          const c = data.current;
-          $temp.textContent = Math.round(c.temperature_2m) + '°C';
-          $wind.textContent = c.wind_speed_10m ?? '–';
-          $desc.textContent = wxMap[c.weather_code] || 'Sää';
-          $time.textContent = new Date(c.time).toLocaleString('fi-FI', {
-            timeZone: tz,
-            hour: '2-digit',
-            minute: '2-digit',
-            weekday: 'short'
-          });
+    // Määritetään, mitä tietoja palvelusta halutaan hakea.
+    // current = tämänhetkinen sää
+    // hourly = tuntikohtainen ennuste
+    // temperature_2m = lämpötila kahden metrin korkeudelta
+    // wind_speed_10m = tuulen nopeus kymmenen metrin korkeudelta
+    // weather_code = säätilaa kuvaava numerokoodi
+    url.search = new URLSearchParams({
+      latitude: lat,
+      longitude: lon,
+      current: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
+      hourly: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
+      timezone: tz
+    }).toString();
 
-          const hTimes = data.hourly.time;
-          const hTemps = data.hourly.temperature_2m;
-          const hWinds = data.hourly.wind_speed_10m;
-          const hCodes = data.hourly.weather_code;
+    // Haetaan HTML-elementit talteen, jotta niihin voidaan kirjoittaa säätiedot.
+    const $temp = document.getElementById('wx-temp');
+    const $desc = document.getElementById('wx-desc');
+    const $wind = document.getElementById('wx-wind');
+    const $time = document.getElementById('wx-time');
+    const $hours = document.getElementById('wx-hours');
+    const $err = document.getElementById('wx-error');
 
-          let idxNow = hTimes.indexOf(c.time);
+    // Tämä olio muuntaa Open-Meteon sääkoodeja selkokielisiksi suomenkielisiksi teksteiksi.
+    // Näin käyttäjälle ei näytetä numeroita vaan ymmärrettävä kuvaus.
+    const wxMap = {
+      0: 'Selkeää',
+      1: 'Enimmäkseen selkeää',
+      2: 'Puolipilvistä',
+      3: 'Pilvistä',
+      45: 'Sumua',
+      48: 'Kuuraa',
+      51: 'Tihkua (heikkoa)',
+      53: 'Tihkua',
+      55: 'Tihkua (voimakasta)',
+      61: 'Sadetta (heikkoa)',
+      63: 'Sadetta',
+      65: 'Sadetta (voimakasta)',
+      71: 'Lumisadetta',
+      80: 'Sadekuuroja',
+      95: 'Ukkosta'
+    };
 
-          if (idxNow === -1) {
-            idxNow = 0;
-          }
+    // Tämä funktio valitsee sääkoodin perusteella yksinkertaisen emoji-ikonin.
+    // Sen avulla sääkortit näyttävät visuaalisemmilta.
+    function iconFor(code) {
+      if (code === 0) return '☀️';
+      if ([1, 2].includes(code)) return '🌤️';
+      if (code === 3) return '☁️';
+      if ([61, 63, 65, 80].includes(code)) return '🌧️';
+      if ([45, 48].includes(code)) return '🌫️';
+      if (code === 95) return '⛈️';
+      return '🌡️';
+    }
 
-          const from = Math.max(0, idxNow + 1);
-          const to = Math.min(hTimes.length, from + 6);
+    // fetch hakee tiedot palvelimelta.
+    // Tässä tapauksessa pyydetään Open-Meteolta säädataa JSON-muodossa.
+    fetch(url)
 
-          $hours.innerHTML = '';
+      // Ensimmäisessä then-vaiheessa tarkistetaan, että vastaus tuli onnistuneesti.
+      .then(function (response) {
 
-          for (let i = from; i < to; i++) {
-            const t = new Date(hTimes[i]);
-            const col = document.createElement('div');
-            col.className = 'col-6 col-md-4 col-lg-2';
-            col.innerHTML = `
-              <div class="wx-hour">
-                <div class="small text-muted">${t.toLocaleTimeString('fi-FI', { timeZone: tz, hour: '2-digit', minute: '2-digit' })}</div>
-                <div class="fs-3 my-1">${iconFor(hCodes[i])}</div>
-                <div class="fw-semibold">${Math.round(hTemps[i])}°C</div>
-                <div class="small text-muted">${hWinds[i]} m/s</div>
-              </div>
-            `;
-            $hours.appendChild(col);
-          }
-        })
-        .catch(function (error) {
-          console.error(error);
-          $err.classList.remove('d-none');
-        });
-    })();
-
-    // Tämä skripti lukee URL-osoitteesta filter-parametrin ja aktivoi oikean portfoliosuodattimen.
-    document.addEventListener('DOMContentLoaded', function () {
-      const url = new URL(window.location.href);
-      const filter = url.searchParams.get('filter');
-
-      if (!filter) {
-        return;
-      }
-
-      const filterButton = document.querySelector(`[data-filter=".filter-${filter}"]`);
-
-      if (!filterButton) {
-        return;
-      }
-
-      // Odotetaan hetki, jotta Isotope ehtii alustua ennen klikkausta.
-      setTimeout(function () {
-        filterButton.click();
-
-        const portfolioSection = document.getElementById('portfolio');
-        if (portfolioSection) {
-          portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Jos vastaus ei ole kunnollinen, pysäytetään suoritus virheellä.
+        if (!response.ok) {
+          throw new Error('Network error');
         }
-      }, 400);
-    });
-  </script>
+
+        // Muutetaan palvelimen vastaus JSON-muotoon, jotta JavaScript osaa käsitellä sitä.
+        return response.json();
+      })
+
+      // Toisessa then-vaiheessa käsitellään valmis JSON-data.
+      .then(function (data) {
+
+        // Otetaan talteen nykyinen sää.
+        const c = data.current;
+
+        // Kirjoitetaan tämänhetkinen lämpötila sivulle.
+        $temp.textContent = Math.round(c.temperature_2m) + '°C';
+
+        // Kirjoitetaan tuulen nopeus sivulle.
+        $wind.textContent = c.wind_speed_10m ?? '–';
+
+        // Muutetaan sääkoodi selkokieliseksi tekstiksi ja kirjoitetaan sivulle.
+        $desc.textContent = wxMap[c.weather_code] || 'Sää';
+
+        // Muotoillaan aika suomenkieliseen muotoon,
+        // mutta käytetään Bora Boran aikavyöhykettä.
+        $time.textContent = new Date(c.time).toLocaleString('fi-FI', {
+          timeZone: tz,
+          hour: '2-digit',
+          minute: '2-digit',
+          weekday: 'short'
+        });
+
+        // Otetaan tuntikohtaiset ennustetiedot talteen.
+        const hTimes = data.hourly.time;
+        const hTemps = data.hourly.temperature_2m;
+        const hWinds = data.hourly.wind_speed_10m;
+        const hCodes = data.hourly.weather_code;
+
+        // Etsitään tuntikohtaisesta datasta nykyhetken kohta.
+        let idxNow = hTimes.indexOf(c.time);
+
+        // Jos tarkkaa nykyhetkeä ei löydy, aloitetaan listaus varmuuden vuoksi alusta.
+        if (idxNow === -1) {
+          idxNow = 0;
+        }
+
+        // Valitaan seuraavat 6 tuntia näytettäväksi.
+        const from = Math.max(0, idxNow + 1);
+        const to = Math.min(hTimes.length, from + 6);
+
+        // Tyhjennetään vanhat sääkortit ennen uusien luomista.
+        $hours.innerHTML = '';
+
+        // Luodaan seuraavien tuntien sääkortit yksi kerrallaan.
+        for (let i = from; i < to; i++) {
+
+          // Muutetaan ennusteen aika Date-muotoon.
+          const t = new Date(hTimes[i]);
+
+          // Luodaan Bootstrapin ruudukkoon sopiva sarake.
+          const col = document.createElement('div');
+          col.className = 'col-6 col-md-4 col-lg-2';
+
+          // Lisätään sarakkeen sisälle varsinainen sääkortti.
+          col.innerHTML = `
+            <div class="wx-hour">
+              <div class="small text-muted">${t.toLocaleTimeString('fi-FI', { timeZone: tz, hour: '2-digit', minute: '2-digit' })}</div>
+              <div class="fs-3 my-1">${iconFor(hCodes[i])}</div>
+              <div class="fw-semibold">${Math.round(hTemps[i])}°C</div>
+              <div class="small text-muted">${hWinds[i]} m/s</div>
+            </div>
+          `;
+
+          // Lisätään valmis kortti HTML-sivulle näkyviin.
+          $hours.appendChild(col);
+        }
+      })
+
+      // Jos jossain vaiheessa tapahtuu virhe, tämä catch käsittelee sen.
+      .catch(function (error) {
+
+        // Tulostetaan virhe selaimen konsoliin kehittäjää varten.
+        console.error(error);
+
+        // Näytetään käyttäjälle virheilmoitus.
+        $err.classList.remove('d-none');
+      });
+
+  })();
+
+  // Tämä kuuntelee, milloin HTML-sivu on latautunut valmiiksi.
+  // Sen jälkeen tarkistetaan, löytyykö osoiteriviltä filter-parametri.
+  document.addEventListener('DOMContentLoaded', function () {
+
+    // Luetaan nykyinen URL-osoite.
+    const url = new URL(window.location.href);
+
+    // Haetaan osoitteesta filter-parametrin arvo, esimerkiksi ?filter=nature
+    const filter = url.searchParams.get('filter');
+
+    // Jos filter-parametria ei ole, lopetetaan tähän.
+    if (!filter) {
+      return;
+    }
+
+    // Etsitään portfoliofilttereistä nappi, jonka data-filter vastaa osoitteen arvoa.
+    const filterButton = document.querySelector(`[data-filter=".filter-${filter}"]`);
+
+    // Jos vastaavaa nappia ei löytynyt, lopetetaan tähän.
+    if (!filterButton) {
+      return;
+    }
+
+    // Odotetaan hetki, jotta Isotope ehtii alustua ennen nappulan "painamista".
+    setTimeout(function () {
+
+      // Simuloidaan käyttäjän klikkausta oikeaan filtteriin.
+      filterButton.click();
+
+      // Vieritetään näkymä portfolio-osioon, jotta käyttäjä näkee suodatetut kuvat heti.
+      const portfolioSection = document.getElementById('portfolio');
+      if (portfolioSection) {
+        portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 400);
+  });
+
+</script>
 </body>
 
 </html>
