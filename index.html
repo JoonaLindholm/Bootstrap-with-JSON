@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Määritellään merkistö, jotta ääkköset ja erikoismerkit näkyvät oikein -->
+  <meta charset="utf-8">
+
+  <!-- Määritellään sivun responsiivinen skaalautuminen mobiililaitteilla -->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Sivun otsikko selaimen välilehdellä -->
+  <title>My Dream Vacation</title>
+
+  <!-- Sivun kuvaus hakukoneita varten -->
+  <meta name="description" content="">
+
+  <!-- Sivun avainsanat hakukoneita varten -->
+  <meta name="keywords" content="">
+
+  <!-- Sivuston favicon-kuvake selaimen välilehdelle -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Apple-laitteiden oma kuvake -->
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Esiyhdistetään Google Fonts -palveluun, jotta fontit latautuvat nopeammin -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+
+  <!-- Esiyhdistetään fonttitiedostoja tarjoavaan palvelimeen -->
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+
+  <!-- Ladataan sivulla käytettävät fontit -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Ladataan Bootstrapin ja muiden lisäkirjastojen tyylitiedostot -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Ladataan sivun oma päätyylitiedosto -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Templaten lähdetiedot ja lisenssitiedot -->
+  <!-- =======================================================
+  * Template Name: Gp
+  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<!-- Bodyyn on lisätty sivukohtaiset luokat -->
+<body class="index-page bg-secondary">
+
+  <!-- Sivun yläreuna eli kiinteä header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <!-- Sivuston logo tai nimi, joka vie takaisin etusivulle -->
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Halutessa tähän voisi lisätä kuvallisen logon -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Maeva i Bora Bora</h1>
+      </a>
+
+      <!-- Päänavigaatio sivun eri osioihin -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li>
+            <a href="#hero" class="active">Tervetuloa</a>
+          </li>
+
+          <li>
+            <a href="#about">Bora Bora</a>
+          </li>
+
+          <li>
+            <a href="#stats">Faktat</a>
+          </li>
+
+          <li>
+            <a href="#kieli">Kieli</a>
+          </li>
+
+          <li>
+            <a href="#testimonials">Simpukat</a>
+          </li>
+        </ul>
+
+        <!-- Hampurilaisvalikko mobiilinäkymää varten -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <!-- Painike, joka vie toiselle sivulle -->
+      <a class="btn-getstarted" href="Loma_ja_aktiviteetit.html">Lomalle!</a>
+    </div>
+  </header>
+
+  <!-- Sivun varsinainen pääsisältö -->
+  <main class="main">
+
+    <!-- Hero-osio eli sivun näyttävä aloitusnäkymä -->
+    <section id="hero" class="hero section dark-background">
+
+      <!-- Hero-osion taustakuva -->
+      <img src="assets/img/hero-bg.png" alt="" data-aos="fade-in">
+
+      <div class="container">
+
+        <!-- Hero-osion otsikko ja esittelyteksti -->
+        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-xl-6 col-lg-8">
+            <h2>Bora Bora, Tahiti<span>.</span></h2>
+            <p>Tämä on unelmien loma sivu</p>
+          </div>
+        </div>
+
+        <!-- Hero-osion ikonit toimivat pikavalikkona sivun osioihin -->
+        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Linkki Bora Bora -esittelyyn -->
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-info-circle"></i>
+              <h3>
+                <a href="#about">Bora Bora</a>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Linkki faktat-osioon -->
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-bar-chart"></i>
+              <h3>
+                <a href="#stats">Faktat</a>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Linkki kieli-osioon -->
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-translate"></i>
+              <h3>
+                <a href="#kieli">Kieli</a>
+              </h3>
+            </div>
+          </div>
+
+          <!-- Linkki simpukat-osioon -->
+          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon-box">
+              <i class="bi bi-gem"></i>
+              <h3>
+                <a href="#testimonials">Simpukat</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /Hero Section -->
+
+    <!-- About-osio kertoo perustiedot Bora Borasta -->
+    <section id="about" class="about section dark-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <!-- Oikean puolen kuva -->
+          <div class="col-lg-6 order-1 order-lg-2">
+            <img src="assets/img/about.png" class="img-fluid w-100" alt="Bora Boran laguuni ja Mount Otemanu">
+          </div>
+
+          <!-- Vasemman puolen tekstisisältö -->
+          <div class="col-lg-6 order-2 order-lg-1 content">
+            <h3>Bora Bora</h3>
+
+            <p>
+              Bora Bora on yksi Ranskan Polynesian Society-saarista (Îles Sous-le-Vent) ja sijaitsee noin
+              230&nbsp;km Tahitista luoteeseen. Saari on tuliperäinen ja sen maisemaa hallitsee jylhä
+              <strong>Mount Otemanu (727&nbsp;m)</strong>. Alueella on asuttu yli tuhannen vuoden ajan, kun polynesialaiset
+              merenkulkijat saapuivat tänne kanooteilla ja perustivat yhteisöjä laguunia ympäröiville hiekkasärkille
+              (motu).
+            </p>
+
+            <p>
+              Eurooppalaiset tutkimusmatkailijat saapuivat 1700-luvulla: Jakob Roggeveen vieraili vuonna 1722 ja
+              James Cook myöhemmin 1760–1770-luvuilla. 1800-luvun lopulla Bora Borasta tuli osa Ranskan Polynesiaa.
+              Toisen maailmansodan aikana saari toimi Yhdysvaltain huoltobasena
+              (<em>Operation Bobcat</em>), ja tuolta ajalta on yhä nähtävissä linnoitteiden ja tykkiasemien jäänteitä.
+            </p>
+
+            <p>
+              Nykyään Bora Bora tunnetaan kristallinkirkkaasta turkoosista laguunistaan, korallipuutarhoistaan,
+              yli veden kohoavista bungaloweista, <strong>Matira Beachista</strong> sekä mustista helmistä.
+              Suosittuja aktiviteetteja ovat snorklaus, sukellus, haiden ja rauskujen katselu, laguuniristeilyt sekä
+              vaellukset Otemanun juurella. Polynesialainen kulttuuri elää saarella tansseissa, käsitöissä ja
+              perinteisessä keittiössä.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /About Section -->
+
+    <!-- Stats-osiossa esitellään Bora Boraa numeroiden avulla -->
+    <section id="stats" class="stats section dark-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4 align-items-center justify-content-between">
+
+          <!-- Stats-osion kuva -->
+          <div class="col-lg-5">
+            <img src="assets/img/bora-bora-stats.png" alt="Bora Bora – Mount Otemanu ja turkoosi laguuni" class="img-fluid h-100">
+          </div>
+
+          <!-- Stats-osion tekstisisältö ja laskurit -->
+          <div class="col-lg-6">
+
+            <h3 class="fw-bold fs-2 mb-3">Bora Bora numeroina</h3>
+
+            <p>
+              “Tyynenmeren helmi” tunnetaan jylhästä Otemanusta, turkoosista laguunista ja legendaarisista yli‑veden bungaloweista. Tässä muutama nopea fakta suunnittelun tueksi.
+            </p>
+
+            <div class="row gy-4">
+
+              <!-- Etäisyys Tahitista -->
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-pin-map-fill flex-shrink-0"></i>
+                  <div>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="230"
+                      data-purecounter-duration="1"
+                      class="purecounter"></span>
+                    <p><strong>Kilometriä Tahitilta</strong> <span>noin luoteeseen Papeetesta</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Korkein huippu -->
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-graph-up-arrow flex-shrink-0"></i>
+                  <div>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="727"
+                      data-purecounter-duration="1"
+                      class="purecounter"></span>
+                    <p><strong>Korkein huippu (m)</strong> <span>Mount Otemanu</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Riutan läpikulkujen määrä -->
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-water flex-shrink-0"></i>
+                  <div>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="1"
+                      data-purecounter-duration="1"
+                      class="purecounter"></span>
+                    <p><strong>Riutan läpikulkuja</strong> <span>Teavanui Pass (ainoa)</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pinta-ala -->
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-rulers flex-shrink-0"></i>
+                  <div>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="30.55"
+                      data-purecounter-decimals="2"
+                      data-purecounter-duration="1"
+                      class="purecounter"></span>
+                    <p><strong>Pinta-ala (km²)</strong> <span>kompakti ja helppo kiertää</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Väkiluku -->
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-people flex-shrink-0"></i>
+                  <div>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="10605"
+                      data-purecounter-duration="1"
+                      class="purecounter"></span>
+                    <p><strong>Asukkaita</strong> <span>(viimeisin virallinen luku)</span></p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Julkinen ranta -->
+              <div class="col-lg-6">
+                <div class="stats-item d-flex">
+                  <i class="bi bi-umbrella flex-shrink-0"></i>
+                  <div>
+                    <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="1"
+                      data-purecounter-duration="1"
+                      class="purecounter"></span>
+                    <p><strong>Julkinen ranta</strong> <span>Matira Beach (pääsaarella)</span></p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Stats Section -->
+
+    <!-- Kieli-osiossa esitellään hyödyllisiä reo tahitin fraaseja -->
+    <section id="kieli" class="services section dark-background">
+
+      <!-- Osion otsikko -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2><strong>Reo Tahiti</strong></h2>
+        <br>
+        <h4>Tahitilla puhutaan englantia, ranskaa ja reo tahitin kieltä!</h4>
+        <h4>Hyödyllisiä fraaseja matkailijoille reo tahitiksi!</h4>
+      </div>
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <!-- Tervehdys -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-chat-dots"></i>
+              </div>
+              <h3>Ia ora na</h3>
+              <p>Terve!</p>
+            </div>
+          </div>
+
+          <!-- Kiitoksen ilmaus -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-heart"></i>
+              </div>
+              <h3>Māuruuru</h3>
+              <p>Kiitos.</p>
+            </div>
+          </div>
+
+          <!-- Hyvästely -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-hand-thumbs-up"></i>
+              </div>
+              <h3>Nānā</h3>
+              <p>Näkemiin.</p>
+            </div>
+          </div>
+
+          <!-- Kysymys kuulumisista -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-emoji-smile"></i>
+              </div>
+              <h3>E aha tō ‘oe huru?</h3>
+              <p>Mitä kuuluu?</p>
+            </div>
+          </div>
+
+          <!-- Myöntävä vastaus -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-check-circle"></i>
+              </div>
+              <h3>‘Ē</h3>
+              <p>Kyllä.</p>
+            </div>
+          </div>
+
+          <!-- Kieltävä vastaus -->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-x-circle"></i>
+              </div>
+              <h3>Aita</h3>
+              <p>Ei.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- /Kieli Section -->
+
+    <!-- Testimonials-osio toimii täällä simpukkakarusellina -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <!-- Taustakuva testimonials-osiolle -->
+      <img src="assets/img/testimonials-bg.png" class="testimonials-bg" alt="Koralliriutan teksturoitu taustakuva">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Swiper-karuselli -->
+        <div class="swiper init-swiper">
+
+          <!-- Swiperin asetukset JSON-muodossa -->
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": { "delay": 5000 },
+              "slidesPerView": "auto",
+              "pagination": { "el": ".swiper-pagination", "type": "bullets", "clickable": true }
+            }
+          </script>
+
+          <div class="swiper-wrapper">
+
+            <!-- Black-lip pearl oyster -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/shell-pearl-oyster.png" class="testimonial-img" alt="Black-lip pearl oyster (Pinctada margaritifera)">
+                <h3>Black‑lip Pearl Oyster</h3>
+                <h4>Pinctada margaritifera</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>
+                    “Olen Bora Boran helmisaarten ylpeys—laguunin kirkkaus näkyy jokaisessa helmässäni.”
+                  </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- Maxima-jättiläissimpukka -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/shell-maxima.png" class="testimonial-img" alt="Small giant clam (Tridacna maxima)">
+                <h3>Maxima‑jättiläissimpukka</h3>
+                <h4>Tridacna maxima</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>
+                    “Kylven auringossa ja leväkumppanini hoitaa energiat—siksi hehkun turkoosissa laguunissa.”
+                  </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- Tiger cowrie -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/shell-tiger.png" class="testimonial-img" alt="Tiger cowrie (Cypraea tigris)">
+                <h3>Tiger Cowrie</h3>
+                <h4>Cypraea tigris</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>
+                    “Kiiltävä kuin posliini—päivisin piilossa bommien lomassa, öisin ulkona muotinäytöksessä.”
+                  </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- Textile cone -->
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/shell-textile.png" class="testimonial-img" alt="Textile cone (Conus textile)">
+                <h3>Textile Cone</h3>
+                <h4>Conus textile</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>
+                    “Kaunis kuviointi—mutta muistathan: minä olen myrkkyneula. Ihaile, älä koske.”
+                  </span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Karusellin sivutus -->
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section>
+    <!-- /Testimonials Section -->
+
+  </main>
+
+  <!-- Sivun alatunniste -->
+  <footer id="footer" class="footer dark-background">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+
+          <!-- Footerin esittely ja sisäinen navigaatio -->
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">Welcome to the paradise</span>
+            </a>
+
+            <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-12 text-center footer-about">
+
+                <!-- Footerin ikonipohjainen navigaatio -->
+                <div class="footer-icons d-flex justify-content-center gap-4 flex-wrap">
+
+                  <a href="#about" class="footer-icon">
+                    <i class="bi bi-info-circle"></i>
+                    <span>Bora Bora</span>
+                  </a>
+
+                  <a href="#stats" class="footer-icon">
+                    <i class="bi bi-bar-chart"></i>
+                    <span>Faktat</span>
+                  </a>
+
+                  <a href="#kieli" class="footer-icon">
+                    <i class="bi bi-translate"></i>
+                    <span>Kieli</span>
+                  </a>
+
+                  <a href="#testimonials" class="footer-icon">
+                    <i class="bi bi-gem"></i>
+                    <span>Simpukat</span>
+                  </a>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tekijänoikeus- ja credit-tiedot -->
+    <div class="copyright">
+      <div class="container text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">GP</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+          <!-- Templaten credit-linkit on jätetty näkyviin lisenssin mukaisesti -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Painike, jolla käyttäjä voi palata sivun yläosaan -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Sivun preloader-animaatio -->
+  <div id="preloader"></div>
+
+  <!-- Ladataan Bootstrapin ja muiden lisäkirjastojen JavaScript-tiedostot -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Ladataan sivun oma JavaScript-tiedosto -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
