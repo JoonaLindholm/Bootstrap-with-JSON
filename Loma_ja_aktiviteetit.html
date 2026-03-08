@@ -148,93 +148,120 @@
       </div>
     </section>
 
-    <!-- Portfolio-osio näyttää kuvia eri aiheista -->
-    <section id="portfolio" class="portfolio section">
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Bora Bora kuvina</h2>
-        <br>
-        <h5>Löydä Bora Boran parhaat elämykset</h5>
-        <h5>Bora Bora tarjoaa unohtumattomia elämyksiä: kristallinkirkkaita laguuneja, sukelluskohteita, vehreitä vuoria ja ylellisiä overwater-bungaloweja. Tutustu saareen kuvien kautta.</h5>
-      </div>
+  <!-- Portfolio-osio näyttää kuvia eri aiheista -->
+<!-- Portfolio-osio näyttää kuvia eri aiheista -->
+<section id="portfolio" class="portfolio section">
 
-      <div class="container">
-        <!-- Portfoliofilttereillä käyttäjä voi rajata näkyviä kuvia -->
-        <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-          <li class="filter-active" data-filter="*">Kaikki</li>
-          <li data-filter=".filter-activities">Aktiviteetit</li>
-          <li data-filter=".filter-resorts">Resortit</li>
-          <li data-filter=".filter-nature">Luonto</li>
-        </ul>
+  <!-- Osion otsikko -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Bora Bora kuvina</h2>
+    <br>
+    <h5>Löydä Bora Boran parhaat elämykset</h5>
+    <h5>Bora Bora tarjoaa unohtumattomia elämyksiä: kristallinkirkkaita laguuneja, sukelluskohteita, vehreitä vuoria ja ylellisiä overwater-bungaloweja. Tutustu saareen kuvien kautta.</h5>
+  </div>
 
-        <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-          <!-- Aktiviteettikuvat -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
-            <img src="assets/img/moorea/diving1.jpg" class="img-fluid" alt="Sukellus Bora Boralla">
-            <div class="portfolio-info">
-              <h4>Sukellus</h4>
-              <p>Trooppiset kalat ja koralliriutat</p>
-              <a href="Kuvat/diving1.png" class="glightbox preview-link" data-gallery="portfolio-gallery-activities"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
+  <div class="container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
-            <img src="assets/img/moorea/snorkeling.jpg" class="img-fluid" alt="Snorklaus Bora Boralla">
-            <div class="portfolio-info">
-              <h4>Snorklaus</h4>
-              <p>Korallit ja värikkäät kalat</p>
-              <a href="Kuvat/snorkeling.png" class="glightbox preview-link" data-gallery="portfolio-gallery-activities"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
+    <!-- Tämä wrapper tarvitaan jotta Isotope-suodatus toimii -->
+    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
-            <img src="Kuvat/kayak.png" class="img-fluid" alt="Kajakki Bora Boralla">
-            <div class="portfolio-info">
-              <h4>Kajakki</h4>
-              <p>Laguunien tutkiminen kajakilla</p>
-              <a href="Kuvat/kayak.png" class="glightbox preview-link" data-gallery="portfolio-gallery-activities"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
+      <!-- Portfoliofiltterit -->
+      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+        <li class="filter-active" data-filter="*">Kaikki</li>
+        <li data-filter=".filter-activities">Aktiviteetit</li>
+        <li data-filter=".filter-resorts">Resortit</li>
+        <li data-filter=".filter-nature">Luonto</li>
+      </ul>
 
-          <!-- Resort-kuvat -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
-            <img src="Kuvat/resort1.png" class="img-fluid" alt="Bora Boran resort">
-            <div class="portfolio-info">
-              <h4>Overwater Bungalow</h4>
-              <p>Bora Boran luksusresortit</p>
-              <a href="Kuvat/resort1.png" class="glightbox preview-link" data-gallery="portfolio-gallery-resorts"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
+      <!-- Portfolio-kuvat -->
+      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
-            <img src="Kuvat/resort2.png" class="img-fluid" alt="Ylellinen resort Bora Boralla">
-            <div class="portfolio-info">
-              <h4>Resort 2</h4>
-              <p>Rauhallinen ja ylellinen majoitus</p>
-              <a href="Kuvat/resort2.png" class="glightbox preview-link" data-gallery="portfolio-gallery-resorts"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
-
-          <!-- Luontokuvat -->
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
-            <img src="assets/img/moorea/mountains.jpg" class="img-fluid" alt="Bora Boran vuoret">
-            <div class="portfolio-info">
-              <h4>Vuoret</h4>
-              <p>Trooppinen luonto ja viidakko</p>
-              <a href="assets/img/moorea/mountains.jpg" class="glightbox preview-link" data-gallery="portfolio-gallery-nature"><i class="bi bi-zoom-in"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
-            <img src="assets/img/moorea/lake.jpg" class="img-fluid" alt="Bora Boran laguuni">
-            <div class="portfolio-info">
-              <h4>Laguuni</h4>
-              <p>Kirkas vesi ja trooppiset näkymät</p>
-              <a href="assets/img/moorea/lake.jpg" class="glightbox preview-link" data-gallery="portfolio-gallery-nature"><i class="bi bi-zoom-in"></i></a>
-            </div>
+        <!-- Aktiviteetit -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
+          <img src="assets/img/moorea/diving1.jpg" class="img-fluid" alt="Sukellus Bora Boralla">
+          <div class="portfolio-info">
+            <h4>Sukellus</h4>
+            <p>Trooppiset kalat ja koralliriutat</p>
+            <a href="Kuvat/diving1.png" class="glightbox preview-link" data-gallery="portfolio-gallery-activities">
+              <i class="bi bi-zoom-in"></i>
+            </a>
           </div>
         </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
+          <img src="assets/img/moorea/snorkeling.jpg" class="img-fluid" alt="Snorklaus Bora Boralla">
+          <div class="portfolio-info">
+            <h4>Snorklaus</h4>
+            <p>Korallit ja värikkäät kalat</p>
+            <a href="Kuvat/snorkeling.png" class="glightbox preview-link" data-gallery="portfolio-gallery-activities">
+              <i class="bi bi-zoom-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
+          <img src="Kuvat/kayak.png" class="img-fluid" alt="Kajakki Bora Boralla">
+          <div class="portfolio-info">
+            <h4>Kajakki</h4>
+            <p>Laguunien tutkiminen kajakilla</p>
+            <a href="Kuvat/kayak.png" class="glightbox preview-link" data-gallery="portfolio-gallery-activities">
+              <i class="bi bi-zoom-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Resortit -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
+          <img src="Kuvat/resort1.png" class="img-fluid" alt="Bora Boran resort">
+          <div class="portfolio-info">
+            <h4>Overwater Bungalow</h4>
+            <p>Bora Boran luksusresortit</p>
+            <a href="Kuvat/resort1.png" class="glightbox preview-link" data-gallery="portfolio-gallery-resorts">
+              <i class="bi bi-zoom-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
+          <img src="Kuvat/resort2.png" class="img-fluid" alt="Ylellinen resort Bora Boralla">
+          <div class="portfolio-info">
+            <h4>Resort 2</h4>
+            <p>Rauhallinen ja ylellinen majoitus</p>
+            <a href="Kuvat/resort2.png" class="glightbox preview-link" data-gallery="portfolio-gallery-resorts">
+              <i class="bi bi-zoom-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Luonto -->
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
+          <img src="assets/img/moorea/mountains.jpg" class="img-fluid" alt="Bora Boran vuoret">
+          <div class="portfolio-info">
+            <h4>Vuoret</h4>
+            <p>Trooppinen luonto ja viidakko</p>
+            <a href="assets/img/moorea/mountains.jpg" class="glightbox preview-link" data-gallery="portfolio-gallery-nature">
+              <i class="bi bi-zoom-in"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
+          <img src="assets/img/moorea/lake.jpg" class="img-fluid" alt="Bora Boran laguuni">
+          <div class="portfolio-info">
+            <h4>Laguuni</h4>
+            <p>Kirkas vesi ja trooppiset näkymät</p>
+            <a href="assets/img/moorea/lake.jpg" class="glightbox preview-link" data-gallery="portfolio-gallery-nature">
+              <i class="bi bi-zoom-in"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
-    </section>
+
+    </div>
+  </div>
+
+</section>
 
     <!-- Sääosio hakee JSON-dataa Open-Meteo-palvelusta -->
     <section id="sää" class="section dark-background py-5">
