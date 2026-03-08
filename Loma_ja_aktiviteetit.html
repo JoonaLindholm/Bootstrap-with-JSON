@@ -32,6 +32,9 @@
   <!-- Ladataan sivulla käytettävät fontit -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- Esiladataan hero-kuva, koska se näkyy heti sivun avauduttua -->
+  <link rel="preload" as="image" href="Kuvat/hero2-bg.png">
+
   <!-- Ladataan Bootstrapin ja muiden kirjastojen tyylit -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -136,7 +139,7 @@
 
     <!-- Hero-osio näyttää sivun pääkuvan ja otsikon -->
     <section id="hero" class="hero section dark-background">
-      <img src="Kuvat/hero2-bg.png" alt="Bora Boran maisema" data-aos="fade-in">
+      <img src="Kuvat/hero2-bg.png" alt="Bora Boran maisema" data-aos="fade-in" fetchpriority="high" decoding="async">
 
       <div class="container">
         <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
@@ -148,141 +151,141 @@
       </div>
     </section>
 
-<!-- Portfolio-osio näyttää kuvia eri aiheista -->
-<section id="portfolio" class="portfolio section">
+    <!-- Portfolio-osio näyttää kuvia eri aiheista -->
+    <section id="portfolio" class="portfolio section">
 
-  <!-- Osion otsikko -->
-  <div class="container section-title" data-aos="fade-up"> 
-  <h1>Bora Bora kuvina</h1>
-  <br> 
-  <h5>Löydä Bora Boran parhaat elämykset!</h5>
-  <h5>Bora Bora tarjoaa unohtumattomia elämyksiä, joita ovat esimerkiksi kristallinkirkkaat laguunit, sukelluskohteet, vuori Mount Otemanu sekä ylelliset overwater-bungalowit.</h5> 
-  <h5>Tutustu saareen kuvien kautta.</h5> 
-</div>
-
-  <div class="container">
-
-    <!-- Tämä wrapper tarvitaan jotta Isotope-suodatus toimii eli välilehdet näyttävät oikeat kuvat -->
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-      <!-- Portfoliofiltterit -->
-      <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-        <li class="filter-active" data-filter="*">Kaikki</li>
-        <li data-filter=".filter-activities">Aktiviteetit</li>
-        <li data-filter=".filter-resorts">Resortit</li>
-        <li data-filter=".filter-nature">Luonto</li>
-      </ul>
-
-      <!-- Portfolio-kuvat -->
-      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-<!-- Aktiviteetit -->
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
-  <img src="Kuvat/diving1.png" class="img-fluid" alt="Sukelluskuva Bora Boran koralliriutalta">
-  <div class="portfolio-info">
-    <h4>Sukellus</h4>
-    <p>Sukellus Bora Boralla</p>
-    <a href="Kuvat/diving1.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-activities"
-       aria-label="Avaa suurempi kuva sukelluksesta">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
-  <img src="Kuvat/snorkeling.png" class="img-fluid" alt="Snorklausvälineet Bora Boran rannalla">
-  <div class="portfolio-info">
-    <h4>Snorklaus</h4>
-    <p>Snorklaus Bora Boralla</p>
-    <a href="Kuvat/snorkeling.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-activities"
-       aria-label="Avaa suurempi kuva snorklauksesta">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
-  <img src="Kuvat/kayak.png" class="img-fluid" alt="Kajakki kirkkaassa laguunivedessä Bora Boralla">
-  <div class="portfolio-info">
-    <h4>Kajakki</h4>
-    <p>Kajakointi laguuneissa</p>
-    <a href="Kuvat/kayak.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-activities"
-       aria-label="Avaa suurempi kuva kajakista">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Resortit -->
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
-  <img src="Kuvat/resort1.png" class="img-fluid" alt="Overwater bungalowit Bora Boran laguunilla">
-  <div class="portfolio-info">
-    <h4>Overwater Bungalow</h4>
-    <p>Bora Boran luksusresortit</p>
-    <a href="Kuvat/resort1.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-resorts"
-       aria-label="Avaa suurempi kuva overwater bungaloweista">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
-  <img src="Kuvat/resort2.png" class="img-fluid" alt="Ilta-aikainen resort Bora Boralla">
-  <div class="portfolio-info">
-    <h4>Resort 2</h4>
-    <p>Rauhallinen ja ylellinen majoitus</p>
-    <a href="Kuvat/resort2.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-resorts"
-       aria-label="Avaa suurempi kuva resortista">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<!-- Luonto -->
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
-  <img src="Kuvat/viidakko.png" class="img-fluid" alt="Bora Boran trooppista viidakkoa">
-  <div class="portfolio-info">
-    <h4>Viidakko</h4>
-    <p>Trooppinen luonto ja viidakko</p>
-    <a href="Kuvat/viidakko.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-nature"
-       aria-label="Avaa suurempi kuva viidakosta">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
-<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
-  <img src="Kuvat/vedenalla.png" class="img-fluid" alt="Bora Boran vedenalainen luonto ja koralliriutta">
-  <div class="portfolio-info">
-    <h4>Vedenalainen maailma</h4>
-    <p>Kaunis maisema veden alla ja päällä</p>
-    <a href="Kuvat/vedenalla.png"
-       class="glightbox preview-link"
-       data-gallery="portfolio-gallery-nature"
-       aria-label="Avaa suurempi kuva vedenalaisesta maisemasta">
-      <i class="bi bi-zoom-in" aria-hidden="true"></i>
-    </a>
-  </div>
-</div>
-
+      <!-- Osion otsikko -->
+      <div class="container section-title" data-aos="fade-up"> 
+        <h1>Bora Bora kuvina</h1>
+        <br> 
+        <h5>Löydä Bora Boran parhaat elämykset!</h5>
+        <h5>Bora Bora tarjoaa unohtumattomia elämyksiä, joita ovat esimerkiksi kristallinkirkkaat laguunit, sukelluskohteet, vuori Mount Otemanu sekä ylelliset overwater-bungalowit.</h5> 
+        <h5>Tutustu saareen kuvien kautta.</h5> 
       </div>
 
-    </div>
-  </div>
+      <div class="container">
 
-</section>
+        <!-- Tämä wrapper tarvitaan jotta Isotope-suodatus toimii eli välilehdet näyttävät oikeat kuvat -->
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+          <!-- Portfoliofiltterit -->
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li class="filter-active" data-filter="*">Kaikki</li>
+            <li data-filter=".filter-activities">Aktiviteetit</li>
+            <li data-filter=".filter-resorts">Resortit</li>
+            <li data-filter=".filter-nature">Luonto</li>
+          </ul>
+
+          <!-- Portfolio-kuvat -->
+          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
+
+            <!-- Aktiviteetit -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
+              <img src="Kuvat/diving1.png" class="img-fluid" alt="Sukelluskuva Bora Boran koralliriutalta" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Sukellus</h4>
+                <p>Sukellus Bora Boralla</p>
+                <a href="Kuvat/diving1.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-activities"
+                   aria-label="Avaa suurempi kuva sukelluksesta">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
+              <img src="Kuvat/snorkeling.png" class="img-fluid" alt="Snorklausvälineet Bora Boran rannalla" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Snorklaus</h4>
+                <p>Snorklaus Bora Boralla</p>
+                <a href="Kuvat/snorkeling.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-activities"
+                   aria-label="Avaa suurempi kuva snorklauksesta">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-activities">
+              <img src="Kuvat/kayak.png" class="img-fluid" alt="Kajakki kirkkaassa laguunivedessä Bora Boralla" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Kajakki</h4>
+                <p>Kajakointi laguuneissa</p>
+                <a href="Kuvat/kayak.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-activities"
+                   aria-label="Avaa suurempi kuva kajakista">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Resortit -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
+              <img src="Kuvat/resort1.png" class="img-fluid" alt="Overwater bungalowit Bora Boran laguunilla" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Overwater Bungalow</h4>
+                <p>Bora Boran luksusresortit</p>
+                <a href="Kuvat/resort1.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-resorts"
+                   aria-label="Avaa suurempi kuva overwater bungaloweista">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-resorts">
+              <img src="Kuvat/resort2.png" class="img-fluid" alt="Ilta-aikainen resort Bora Boralla" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Resort 2</h4>
+                <p>Rauhallinen ja ylellinen majoitus</p>
+                <a href="Kuvat/resort2.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-resorts"
+                   aria-label="Avaa suurempi kuva resortista">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Luonto -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
+              <img src="Kuvat/viidakko.png" class="img-fluid" alt="Bora Boran trooppista viidakkoa" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Viidakko</h4>
+                <p>Trooppinen luonto ja viidakko</p>
+                <a href="Kuvat/viidakko.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-nature"
+                   aria-label="Avaa suurempi kuva viidakosta">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nature">
+              <img src="Kuvat/vedenalla.png" class="img-fluid" alt="Bora Boran vedenalainen luonto ja koralliriutta" loading="lazy" decoding="async">
+              <div class="portfolio-info">
+                <h4>Vedenalainen maailma</h4>
+                <p>Kaunis maisema veden alla ja päällä</p>
+                <a href="Kuvat/vedenalla.png"
+                   class="glightbox preview-link"
+                   data-gallery="portfolio-gallery-nature"
+                   aria-label="Avaa suurempi kuva vedenalaisesta maisemasta">
+                  <i class="bi bi-zoom-in" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
 
     <!-- Sääosio hakee JSON-dataa Open-Meteo-palvelusta -->
     <section id="sää" class="section dark-background py-5">
@@ -296,7 +299,7 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row align-items-center justify-content-between gy-4">
           <div class="col-lg-5">
-            <img src="Kuvat/ruoka.png" class="img-fluid rounded-3" alt="Onko hyvä sää syödä ulkona">
+            <img src="Kuvat/ruoka.png" class="img-fluid rounded-3" alt="Onko hyvä sää syödä ulkona" loading="lazy" decoding="async">
           </div>
 
           <div class="col-lg-7">
@@ -384,241 +387,236 @@
 
   <!-- Alla templaten mukana tulleiden tiedostojen haut -->
   <!-- Ladataan Bootstrapin JavaScript-toiminnot -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Lomakkeiden validointiskripti templaten mukana -->
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
 
   <!-- Ladataan AOS-animaatiokirjasto -->
-  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
 
   <!-- Ladataan Swiper-karuselli -->
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
   <!-- Ladataan Glightbox kuvien suurennusta varten -->
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
 
   <!-- Ladataan imagesLoaded-kirjasto kuvien latauksen tunnistamiseen -->
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
 
   <!-- Ladataan Isotope-kirjasto portfoliofilttereitä varten -->
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
 
   <!-- Ladataan PureCounter-numeroanimaatiot -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
 
   <!-- Ladataan sivun oma pääskripti -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
-<!-- Tämä scripti hakee säätiedot Open-Meteo-palvelusta JSON-muodossa
-     ja näyttää ne sääosiossa. Lisäksi se lukee URL-osoitteesta
-     mahdollisen portfoliofilterin ja aktivoi oikean kuvaryhmän. -->
-<script>
+  <!-- Tämä scripti hakee säätiedot Open-Meteo-palvelusta JSON-muodossa
+       ja näyttää ne sääosiossa. Lisäksi se lukee URL-osoitteesta
+       mahdollisen portfoliofilterin ja aktivoi oikean kuvaryhmän. -->
+  <script>
+    // Tämä funktio suoritetaan heti, kun selain lukee scriptin.
+    // Sen tehtävä on hakea Bora Boran säätiedot ja näyttää ne sivulla.
+    (function () {
 
-  // Tämä funktio suoritetaan heti, kun selain lukee scriptin.
-  // Sen tehtävä on hakea Bora Boran säätiedot ja näyttää ne sivulla.
-  (function () {
+      // Bora Boran koordinaatit suunnilleen.
+      // Näiden perusteella Open-Meteo tietää, minkä paikan sää haetaan.
+      const lat = -16.5004;
+      const lon = -151.7415;
 
-    // Bora Boran koordinaatit suunnilleen.
-    // Näiden perusteella Open-Meteo tietää, minkä paikan sää haetaan.
-    const lat = -16.5004;
-    const lon = -151.7415;
+      // Aikavyöhyke tarvitaan, jotta kellonaika näkyy paikallisessa ajassa.
+      const tz = 'Pacific/Tahiti';
 
-    // Aikavyöhyke tarvitaan, jotta kellonaika näkyy paikallisessa ajassa.
-    const tz = 'Pacific/Tahiti';
+      // Luodaan Open-Meteo-palvelun osoite.
+      const url = new URL('https://api.open-meteo.com/v1/forecast');
 
-    // Luodaan Open-Meteo-palvelun osoite.
-    const url = new URL('https://api.open-meteo.com/v1/forecast');
+      // Määritetään, mitä tietoja palvelusta halutaan hakea.
+      // current = tämänhetkinen sää
+      // hourly = tuntikohtainen ennuste
+      // temperature_2m = lämpötila kahden metrin korkeudelta
+      // wind_speed_10m = tuulen nopeus kymmenen metrin korkeudelta
+      // weather_code = säätilaa kuvaava numerokoodi
+      url.search = new URLSearchParams({
+        latitude: lat,
+        longitude: lon,
+        current: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
+        hourly: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
+        timezone: tz
+      }).toString();
 
-    // Määritetään, mitä tietoja palvelusta halutaan hakea.
-    // current = tämänhetkinen sää
-    // hourly = tuntikohtainen ennuste
-    // temperature_2m = lämpötila kahden metrin korkeudelta
-    // wind_speed_10m = tuulen nopeus kymmenen metrin korkeudelta
-    // weather_code = säätilaa kuvaava numerokoodi
-    url.search = new URLSearchParams({
-      latitude: lat,
-      longitude: lon,
-      current: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
-      hourly: ['temperature_2m', 'wind_speed_10m', 'weather_code'].join(','),
-      timezone: tz
-    }).toString();
+      // Haetaan HTML-elementit talteen, jotta niihin voidaan kirjoittaa säätiedot.
+      const $temp = document.getElementById('wx-temp');
+      const $desc = document.getElementById('wx-desc');
+      const $wind = document.getElementById('wx-wind');
+      const $time = document.getElementById('wx-time');
+      const $hours = document.getElementById('wx-hours');
+      const $err = document.getElementById('wx-error');
 
-    // Haetaan HTML-elementit talteen, jotta niihin voidaan kirjoittaa säätiedot.
-    const $temp = document.getElementById('wx-temp');
-    const $desc = document.getElementById('wx-desc');
-    const $wind = document.getElementById('wx-wind');
-    const $time = document.getElementById('wx-time');
-    const $hours = document.getElementById('wx-hours');
-    const $err = document.getElementById('wx-error');
+      // Tämä olio muuntaa Open-Meteon sääkoodeja selkokielisiksi suomenkielisiksi teksteiksi.
+      // käyttäjälle näytetään kuvaus ei numeroita, koska se on helpompaa ymmärtää.
+      const wxMap = {
+        0: 'Selkeää',
+        1: 'Enimmäkseen selkeää',
+        2: 'Puolipilvistä',
+        3: 'Pilvistä',
+        45: 'Sumua',
+        48: 'Kuuraa',
+        51: 'Tihkua (heikkoa)',
+        53: 'Tihkua',
+        55: 'Tihkua (voimakasta)',
+        61: 'Sadetta (heikkoa)',
+        63: 'Sadetta',
+        65: 'Sadetta (voimakasta)',
+        71: 'Lumisadetta',
+        80: 'Sadekuuroja',
+        95: 'Ukkosta'
+      };
 
-    // Tämä olio muuntaa Open-Meteon sääkoodeja selkokielisiksi suomenkielisiksi teksteiksi.
-    // käyttäjälle näytetään kuvaus ei numeroita, koska se on helpompaa ymmärtää.
-    const wxMap = {
-      0: 'Selkeää',
-      1: 'Enimmäkseen selkeää',
-      2: 'Puolipilvistä',
-      3: 'Pilvistä',
-      45: 'Sumua',
-      48: 'Kuuraa',
-      51: 'Tihkua (heikkoa)',
-      53: 'Tihkua',
-      55: 'Tihkua (voimakasta)',
-      61: 'Sadetta (heikkoa)',
-      63: 'Sadetta',
-      65: 'Sadetta (voimakasta)',
-      71: 'Lumisadetta',
-      80: 'Sadekuuroja',
-      95: 'Ukkosta'
-    };
+      // Tämä funktio valitsee sääkoodin perusteella emoji-ikonin.
+      function iconFor(code) {
+        if (code === 0) return '☀️';
+        if ([1, 2].includes(code)) return '🌤️';
+        if (code === 3) return '☁️';
+        if ([61, 63, 65, 80].includes(code)) return '🌧️';
+        if ([45, 48].includes(code)) return '🌫️';
+        if (code === 95) return '⛈️';
+        return '🌡️';
+      }
 
-    // Tämä funktio valitsee sääkoodin perusteella emoji-ikonin.
-    function iconFor(code) {
-      if (code === 0) return '☀️';
-      if ([1, 2].includes(code)) return '🌤️';
-      if (code === 3) return '☁️';
-      if ([61, 63, 65, 80].includes(code)) return '🌧️';
-      if ([45, 48].includes(code)) return '🌫️';
-      if (code === 95) return '⛈️';
-      return '🌡️';
-    }
+      // fetch hakee tiedot palvelimelta.
+      // Tässä tapauksessa pyydetään Open-Meteolta säädataa JSON-muodossa.
+      fetch(url)
 
-    // fetch hakee tiedot palvelimelta.
-    // Tässä tapauksessa pyydetään Open-Meteolta säädataa JSON-muodossa.
-    fetch(url)
+        // Ensimmäisessä vaiheessa tarkistetaan, että vastaus tuli onnistuneesti.
+        .then(function (response) {
 
-      // Ensimmäisessä vaiheessa tarkistetaan, että vastaus tuli onnistuneesti.
-      .then(function (response) {
+          // Jos vastaus ei ole kunnollinen, pysäytetään suoritus virheellä.
+          if (!response.ok) {
+            throw new Error('Network error');
+          }
 
-        // Jos vastaus ei ole kunnollinen, pysäytetään suoritus virheellä.
-        if (!response.ok) {
-          throw new Error('Network error');
-        }
+          // Muutetaan palvelimen vastaus JSON-muotoon, jotta JavaScript osaa käsitellä sitä.
+          return response.json();
+        })
 
-        // Muutetaan palvelimen vastaus JSON-muotoon, jotta JavaScript osaa käsitellä sitä.
-        return response.json();
-      })
+        // Toisessa vaiheessa käsitellään valmis JSON-data.
+        .then(function (data) {
 
-      // Toisessa vaiheessa käsitellään valmis JSON-data.
-      .then(function (data) {
+          // Otetaan talteen nykyinen sää.
+          const c = data.current;
 
-        // Otetaan talteen nykyinen sää.
-        const c = data.current;
+          // Kirjoitetaan tämänhetkinen lämpötila sivulle.
+          $temp.textContent = Math.round(c.temperature_2m) + '°C';
 
-        // Kirjoitetaan tämänhetkinen lämpötila sivulle.
-        $temp.textContent = Math.round(c.temperature_2m) + '°C';
+          // Kirjoitetaan tuulen nopeus sivulle.
+          $wind.textContent = c.wind_speed_10m ?? '–';
 
-        // Kirjoitetaan tuulen nopeus sivulle.
-        $wind.textContent = c.wind_speed_10m ?? '–';
+          // Muutetaan sääkoodi selkokieliseksi tekstiksi ja kirjoitetaan sivulle.
+          $desc.textContent = wxMap[c.weather_code] || 'Sää';
 
-        // Muutetaan sääkoodi selkokieliseksi tekstiksi ja kirjoitetaan sivulle.
-        $desc.textContent = wxMap[c.weather_code] || 'Sää';
+          // Muotoillaan aika suomenkieliseen muotoon,
+          // mutta käytetään Bora Boran aikavyöhykettä.
+          $time.textContent = new Date(c.time).toLocaleString('fi-FI', {
+            timeZone: tz,
+            hour: '2-digit',
+            minute: '2-digit',
+            weekday: 'short'
+          });
 
-        // Muotoillaan aika suomenkieliseen muotoon,
-        // mutta käytetään Bora Boran aikavyöhykettä.
-        $time.textContent = new Date(c.time).toLocaleString('fi-FI', {
-          timeZone: tz,
-          hour: '2-digit',
-          minute: '2-digit',
-          weekday: 'short'
+          // Otetaan tuntikohtaiset ennustetiedot talteen.
+          const hTimes = data.hourly.time;
+          const hTemps = data.hourly.temperature_2m;
+          const hWinds = data.hourly.wind_speed_10m;
+          const hCodes = data.hourly.weather_code;
+
+          // Etsitään tuntikohtaisesta datasta nykyhetken kohta.
+          let idxNow = hTimes.indexOf(c.time);
+
+          // Jos tarkkaa nykyhetkeä ei löydy, aloitetaan listaus varmuuden vuoksi alusta.
+          if (idxNow === -1) {
+            idxNow = 0;
+          }
+
+          // Valitaan seuraavat 6 tuntia näytettäväksi.
+          const from = Math.max(0, idxNow + 1);
+          const to = Math.min(hTimes.length, from + 6);
+
+          // Tyhjennetään vanhat sääkortit ennen uusien luomista.
+          $hours.innerHTML = '';
+
+          // Luodaan seuraavien tuntien sääkortit yksi kerrallaan.
+          for (let i = from; i < to; i++) {
+
+            // Muutetaan ennusteen aika Date-muotoon.
+            const t = new Date(hTimes[i]);
+
+            // Luodaan Bootstrapin ruudukkoon sopiva sarake.
+            const col = document.createElement('div');
+            col.className = 'col-6 col-md-4 col-lg-2';
+
+            // Lisätään sarakkeen sisälle varsinainen sääkortti.
+            col.innerHTML = `
+              <div class="wx-hour">
+                <div class="small text-muted">${t.toLocaleTimeString('fi-FI', { timeZone: tz, hour: '2-digit', minute: '2-digit' })}</div>
+                <div class="fs-3 my-1">${iconFor(hCodes[i])}</div>
+                <div class="fw-semibold">${Math.round(hTemps[i])}°C</div>
+                <div class="small text-muted">${hWinds[i]} m/s</div>
+              </div>
+            `;
+
+            // Lisätään valmis kortti HTML-sivulle näkyviin.
+            $hours.appendChild(col);
+          }
+        })
+
+        // Jos jossain vaiheessa tapahtuu virhe, tämä catch käsittelee sen.
+        .catch(function (error) {
+
+          // Tulostetaan virhe selaimen konsoliin kehittäjää varten.
+          console.error(error);
+
+          // Näytetään käyttäjälle virheilmoitus.
+          $err.classList.remove('d-none');
         });
 
-        // Otetaan tuntikohtaiset ennustetiedot talteen.
-        const hTimes = data.hourly.time;
-        const hTemps = data.hourly.temperature_2m;
-        const hWinds = data.hourly.wind_speed_10m;
-        const hCodes = data.hourly.weather_code;
+    })();
 
-        // Etsitään tuntikohtaisesta datasta nykyhetken kohta.
-        let idxNow = hTimes.indexOf(c.time);
+    // Tämä kuuntelee, milloin HTML-sivu on latautunut valmiiksi.
+    // Sen jälkeen tarkistetaan, löytyykö osoiteriviltä filter-parametri.
+    document.addEventListener('DOMContentLoaded', function () {
 
-        // Jos tarkkaa nykyhetkeä ei löydy, aloitetaan listaus varmuuden vuoksi alusta.
-        if (idxNow === -1) {
-          idxNow = 0;
-        }
+      // Luetaan nykyinen URL-osoite.
+      const url = new URL(window.location.href);
 
-        // Valitaan seuraavat 6 tuntia näytettäväksi.
-        const from = Math.max(0, idxNow + 1);
-        const to = Math.min(hTimes.length, from + 6);
+      // Haetaan osoitteesta filter-parametrin arvo, esimerkiksi ?filter=nature
+      const filter = url.searchParams.get('filter');
 
-        // Tyhjennetään vanhat sääkortit ennen uusien luomista.
-        $hours.innerHTML = '';
-
-        // Luodaan seuraavien tuntien sääkortit yksi kerrallaan.
-        for (let i = from; i < to; i++) {
-
-          // Muutetaan ennusteen aika Date-muotoon.
-          const t = new Date(hTimes[i]);
-
-          // Luodaan Bootstrapin ruudukkoon sopiva sarake.
-          const col = document.createElement('div');
-          col.className = 'col-6 col-md-4 col-lg-2';
-
-          // Lisätään sarakkeen sisälle varsinainen sääkortti.
-          col.innerHTML = `
-            <div class="wx-hour">
-              <div class="small text-muted">${t.toLocaleTimeString('fi-FI', { timeZone: tz, hour: '2-digit', minute: '2-digit' })}</div>
-              <div class="fs-3 my-1">${iconFor(hCodes[i])}</div>
-              <div class="fw-semibold">${Math.round(hTemps[i])}°C</div>
-              <div class="small text-muted">${hWinds[i]} m/s</div>
-            </div>
-          `;
-
-          // Lisätään valmis kortti HTML-sivulle näkyviin.
-          $hours.appendChild(col);
-        }
-      })
-
-      // Jos jossain vaiheessa tapahtuu virhe, tämä catch käsittelee sen.
-      .catch(function (error) {
-
-        // Tulostetaan virhe selaimen konsoliin kehittäjää varten.
-        console.error(error);
-
-        // Näytetään käyttäjälle virheilmoitus.
-        $err.classList.remove('d-none');
-      });
-
-  })();
-
-  // Tämä kuuntelee, milloin HTML-sivu on latautunut valmiiksi.
-  // Sen jälkeen tarkistetaan, löytyykö osoiteriviltä filter-parametri.
-  document.addEventListener('DOMContentLoaded', function () {
-
-    // Luetaan nykyinen URL-osoite.
-    const url = new URL(window.location.href);
-
-    // Haetaan osoitteesta filter-parametrin arvo, esimerkiksi ?filter=nature
-    const filter = url.searchParams.get('filter');
-
-    // Jos filter-parametria ei ole, lopetetaan tähän.
-    if (!filter) {
-      return;
-    }
-
-    // Etsitään portfoliofilttereistä nappi, jonka data-filter vastaa osoitteen arvoa.
-    const filterButton = document.querySelector(`[data-filter=".filter-${filter}"]`);
-
-    // Jos vastaavaa nappia ei löytynyt, lopetetaan tähän.
-    if (!filterButton) {
-      return;
-    }
-
-    // Odotetaan hetki, jotta Isotope ehtii alustua ennen nappulan "painamista".
-    setTimeout(function () {
-
-      // Simuloidaan käyttäjän klikkausta oikeaan filtteriin.
-      filterButton.click();
-
-      // Vieritetään näkymä portfolio-osioon, jotta käyttäjä näkee suodatetut kuvat heti.
-      const portfolioSection = document.getElementById('portfolio');
-      if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Jos filter-parametria ei ole, lopetetaan tähän.
+      if (!filter) {
+        return;
       }
-    }, 400);
-  });
 
-</script>
+      // Etsitään portfoliofilttereistä nappi, jonka data-filter vastaa osoitteen arvoa.
+      const filterButton = document.querySelector(`[data-filter=".filter-${filter}"]`);
+
+      // Jos vastaavaa nappia ei löytynyt, lopetetaan tähän.
+      if (!filterButton) {
+        return;
+      }
+
+      // Odotetaan hetki, jotta Isotope ehtii alustua ennen nappulan "painamista".
+      setTimeout(function () {
+
+        // Simuloidaan käyttäjän klikkausta oikeaan filtteriin.
+        filterButton.click();
+
+        // Vieritetään näkymä portfolio-osioon, jotta käyttäjä näkee suodatetut kuvat heti.
+        const portfolioSection = document.getElementById('portfolio');
+        if (portfolioSection) {
+          portfolioSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 400);
+    });
+  </script>
 </body>
 
 </html>
