@@ -1724,6 +1724,14 @@ section,
   transition: 0.3s;
 }
 
+#sää {
+  color: white;
+}
+
+#sää .text-muted {
+  color: #d6d6d6 !important;
+}
+  
 .footer-icon i {
   font-size: 26px;
   margin-bottom: 5px;
