@@ -148,12 +148,11 @@
       </div>
     </section>
 
-  <!-- Portfolio-osio näyttää kuvia eri aiheista -->
 <!-- Portfolio-osio näyttää kuvia eri aiheista -->
 <section id="portfolio" class="portfolio section">
 
   <!-- Osion otsikko -->
-<!-- Osion otsikko --> <div class="container section-title" data-aos="fade-up"> 
+  <div class="container section-title" data-aos="fade-up"> 
   <h1>Bora Bora kuvina</h1>
   <br> 
   <h5>Löydä Bora Boran parhaat elämykset!</h5>
@@ -163,7 +162,7 @@
 
   <div class="container">
 
-    <!-- Tämä wrapper tarvitaan jotta Isotope-suodatus toimii -->
+    <!-- Tämä wrapper tarvitaan jotta Isotope-suodatus toimii eli välilehdet näyttävät oikeat kuvat -->
     <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
       <!-- Portfoliofiltterit -->
@@ -280,6 +279,7 @@
           </div>
 
           <div class="col-lg-7">
+            
             <!-- Tähän näytetään nykyinen sää -->
             <div id="wx-current" class="p-4 rounded-3 shadow-sm mb-4 bg-secondary d-flex align-items-center gap-4">
               <div class="display-4 m-0 fw-bold" id="wx-temp">--°C</div>
@@ -291,11 +291,11 @@
               </div>
             </div>
 
-            <!-- Tähän JavaScript luo seuraavien tuntien sääkortit -->
+            <!-- Tähän JavaScript luo seuraavien tuntien sään -->
             <h5 class="fw-semibold mb-3">Seuraavat tunnit</h5>
             <div id="wx-hours" class="row g-3"></div>
 
-            <!-- Tämä virheviesti näytetään vain, jos säähaku epäonnistuu -->
+            <!-- Tämä virheviesti näytetään, jos sään haku epäonnistuu -->
             <div id="wx-error" class="alert alert-danger d-none mt-4" role="alert">
               Sään lataaminen epäonnistui. Yritä hetken päästä uudelleen.
             </div>
@@ -361,6 +361,7 @@
   <!-- Preloader-animaatio ennen sivun latautumista -->
   <div id="preloader"></div>
 
+  <!-- Alla templaten mukana tulleiden tiedostojen haut -->
   <!-- Ladataan Bootstrapin JavaScript-toiminnot -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -389,7 +390,7 @@
   <script src="assets/js/main.js"></script>
 
 <!-- Tämä scripti hakee säätiedot Open-Meteo-palvelusta JSON-muodossa
-     ja näyttää ne Bora Boran sääosiossa. Lisäksi se lukee URL-osoitteesta
+     ja näyttää ne sääosiossa. Lisäksi se lukee URL-osoitteesta
      mahdollisen portfoliofilterin ja aktivoi oikean kuvaryhmän. -->
 <script>
 
@@ -397,7 +398,7 @@
   // Sen tehtävä on hakea Bora Boran säätiedot ja näyttää ne sivulla.
   (function () {
 
-    // Bora Boran likimääräiset koordinaatit.
+    // Bora Boran koordinaatit suunnilleen.
     // Näiden perusteella Open-Meteo tietää, minkä paikan sää haetaan.
     const lat = -16.5004;
     const lon = -151.7415;
@@ -406,7 +407,6 @@
     const tz = 'Pacific/Tahiti';
 
     // Luodaan Open-Meteo-palvelun osoite.
-    // URL-olion käyttö tekee osoitteen rakentamisesta selkeämpää kuin pitkä merkkijono.
     const url = new URL('https://api.open-meteo.com/v1/forecast');
 
     // Määritetään, mitä tietoja palvelusta halutaan hakea.
@@ -432,7 +432,7 @@
     const $err = document.getElementById('wx-error');
 
     // Tämä olio muuntaa Open-Meteon sääkoodeja selkokielisiksi suomenkielisiksi teksteiksi.
-    // Näin käyttäjälle ei näytetä numeroita vaan ymmärrettävä kuvaus.
+    // käyttäjälle näytetään kuvaus ei numeroita, koska se on helpompaa ymmärtää.
     const wxMap = {
       0: 'Selkeää',
       1: 'Enimmäkseen selkeää',
@@ -451,8 +451,7 @@
       95: 'Ukkosta'
     };
 
-    // Tämä funktio valitsee sääkoodin perusteella yksinkertaisen emoji-ikonin.
-    // Sen avulla sääkortit näyttävät visuaalisemmilta.
+    // Tämä funktio valitsee sääkoodin perusteella emoji-ikonin.
     function iconFor(code) {
       if (code === 0) return '☀️';
       if ([1, 2].includes(code)) return '🌤️';
@@ -467,7 +466,7 @@
     // Tässä tapauksessa pyydetään Open-Meteolta säädataa JSON-muodossa.
     fetch(url)
 
-      // Ensimmäisessä then-vaiheessa tarkistetaan, että vastaus tuli onnistuneesti.
+      // Ensimmäisessä vaiheessa tarkistetaan, että vastaus tuli onnistuneesti.
       .then(function (response) {
 
         // Jos vastaus ei ole kunnollinen, pysäytetään suoritus virheellä.
@@ -479,7 +478,7 @@
         return response.json();
       })
 
-      // Toisessa then-vaiheessa käsitellään valmis JSON-data.
+      // Toisessa vaiheessa käsitellään valmis JSON-data.
       .then(function (data) {
 
         // Otetaan talteen nykyinen sää.
