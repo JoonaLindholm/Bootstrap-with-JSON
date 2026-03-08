@@ -1775,6 +1775,14 @@ section,
 #sää #wx-current .small {
   color: #e6e6e6 !important;
 }
+
+#sää .text-muted {
+  color: #e8e8e8 !important;
+}
+
+#sää .small {
+  color: #e8e8e8 !important;
+}
   
 .footer-icon i {
   font-size: 26px;
