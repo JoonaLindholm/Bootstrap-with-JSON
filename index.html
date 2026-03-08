@@ -32,12 +32,14 @@
   <!-- Ladataan sivulla käytettävät fontit -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
+  <!-- Esiladataan hero-kuva, koska se näkyy heti sivun avauduttua -->
+  <link rel="preload" as="image" href="Kuvat/hero-bg.png">
+
   <!-- Ladataan Bootstrapin ja muiden kirjastojen tyylit -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Ladataan sivun oma päätyyli -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -106,7 +108,7 @@
     <section id="hero" class="hero section dark-background">
 
       <!-- Hero-osion taustakuva -->
-      <img src="Kuvat/hero-bg.png" alt="" data-aos="fade-in">
+      <img src="Kuvat/hero-bg.png" alt="" data-aos="fade-in" fetchpriority="high" decoding="async">
 
       <div class="container">
 
@@ -175,7 +177,7 @@
 
           <!-- Oikean puolen kuva -->
           <div class="col-lg-6 order-1 order-lg-2">
-            <img src="Kuvat/about.png" class="img-fluid w-100" alt="Bora Boran laguuni ja Mount Otemanu">
+            <img src="Kuvat/about.png" class="img-fluid w-100" alt="Bora Boran laguuni ja Mount Otemanu" loading="lazy" decoding="async">
           </div>
 
           <!-- Vasemman puolen tekstisisältö -->
@@ -215,7 +217,7 @@
 
           <!-- Stats-osion kuva -->
           <div class="col-lg-5">
-            <img src="Kuvat/bora-bora-stats.png" alt="Bora Bora – Mount Otemanu ja turkoosi laguuni" class="img-fluid h-100">
+            <img src="Kuvat/bora-bora-stats.png" alt="Bora Bora – Mount Otemanu ja turkoosi laguuni" class="img-fluid h-100" loading="lazy" decoding="async">
           </div>
 
           <!-- Stats-osion tekstisisältö ja laskurit -->
@@ -224,7 +226,7 @@
             <h3 class="fw-bold fs-2 mb-3">Bora Bora numeroina</h3>
 
             <p>
-              “Tyynenmeren helmi” tunnetaan jylhästä Otemanusta, turkoosista laguunista ja legendaarisista yli‑veden bungaloweista. Tässä muutama nopea fakta Bora Borasta!
+              “Tyynenmeren helmi” tunnetaan jylhästä Otemanusta, turkoosista laguunista ja legendaarisista yli-veden bungaloweista. Tässä muutama nopea fakta Bora Borasta!
             </p>
 
             <div class="row gy-4">
@@ -418,7 +420,7 @@
     <section id="testimonials" class="testimonials section dark-background">
 
       <!-- Taustakuva testimonials-osiolle -->
-      <img src="Kuvat/testimonials-bg.png" class="testimonials-bg" alt="hiekkaranta">
+      <img src="Kuvat/testimonials-bg.png" class="testimonials-bg" alt="hiekkaranta" loading="lazy" decoding="async">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -441,8 +443,8 @@
             <!-- Black-lip pearl oyster -->
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="Kuvat/shell-pearl-oyster.png" class="testimonial-img" alt="Black-lip pearl oyster (Pinctada margaritifera)">
-                <h3>Black‑lip Pearl Oyster</h3>
+                <img src="Kuvat/shell-pearl-oyster.png" class="testimonial-img" alt="Black-lip pearl oyster (Pinctada margaritifera)" loading="lazy" decoding="async">
+                <h3>Black-lip Pearl Oyster</h3>
                 <h4>Pinctada margaritifera</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -460,8 +462,8 @@
             <!-- Maxima-jättiläissimpukka -->
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="Kuvat/shell-maxima.png" class="testimonial-img" alt="Small giant clam (Tridacna maxima)">
-                <h3>Maxima‑jättiläissimpukka</h3>
+                <img src="Kuvat/shell-maxima.png" class="testimonial-img" alt="Small giant clam (Tridacna maxima)" loading="lazy" decoding="async">
+                <h3>Maxima-jättiläissimpukka</h3>
                 <h4>Tridacna maxima</h4>
                 <div class="stars">
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
@@ -479,7 +481,7 @@
             <!-- Tiger cowrie -->
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="Kuvat/shell-tiger.png" class="testimonial-img" alt="Tiger cowrie (Cypraea tigris)">
+                <img src="Kuvat/shell-tiger.png" class="testimonial-img" alt="Tiger cowrie (Cypraea tigris)" loading="lazy" decoding="async">
                 <h3>Tiger Cowrie</h3>
                 <h4>Cypraea tigris</h4>
                 <div class="stars">
@@ -498,7 +500,7 @@
             <!-- Textile cone -->
             <div class="swiper-slide">
               <div class="testimonial-item">
-                <img src="Kuvat/shell-textile.png" class="testimonial-img" alt="Textile cone (Conus textile)">
+                <img src="Kuvat/shell-textile.png" class="testimonial-img" alt="Textile cone (Conus textile)" loading="lazy" decoding="async">
                 <h3>Textile Cone</h3>
                 <h4>Conus textile</h4>
                 <div class="stars">
@@ -589,17 +591,13 @@
   <div id="preloader"></div>
 
   <!-- Ladataan Bootstrapin ja muiden lisäkirjastojen JavaScript-tiedostot -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
 
   <!-- Ladataan sivun oma JavaScript-tiedosto -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
 </body>
 
